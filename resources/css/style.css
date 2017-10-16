@@ -1,28 +1,49 @@
+/* Global */
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v11/zhcz-_WihjSQC0oHJ9TCYPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v11/IQHow_FEYlDC4Gzy_m8fcoWiMMZ7xLd792ULpGE4W_Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
 html {
-  font-size: 16px;
+  font-size: 18px;
+  font-family: 'Monserrat', sans-serif;
 }
-body {
-  margin: 0;
-}
+
 a {
   text-decoration: none;
 }
+
 nav {
   display: flex;
   height: 64px;
 }
+
 h1 {
-  font-size: 2.5em;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 32px;
 }
+
 h2 {
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 700;
 }
+
 h3 {
   font-size: 1.17em;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 h4 {
@@ -30,34 +51,18 @@ h4 {
 }
 
 button {
-  background: purple;
+  background: lightblue;
   width: 100%;
   padding: 8px 0;
   color: white;
 }
 
-.desktop {
-  display: none;
-}
-
-.mobile {
-  display: flex;
-  justify-content: space-around;
-
-  width: 100%;
-  padding: 0;
-
-}
-
-.navigation {
-  align-items: center;
-}
 nav li {
   list-style: none;
   display: flex;
 }
 
-nav li > a {
+nav li a {
   color: black;
 }
 
@@ -66,73 +71,82 @@ img, video {
   height: auto;
 }
 
-@media only screen and (min-width: 580px) {
-  .mobile {
-    display: none;
-  }
-  .desktop {
-    display: flex;
-    margin-left: 24px;
-    padding-left: 0;
-    width: 100%;
-  }
-  .logo {
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    flex: 1;
-  }
-  .logo a {
-    display: flex;
-    align-items: center;
-  }
-  .logo span {
-    font-weight: bold;
-  }
-  nav li:nth-child(n+1) {
-    margin-right: 16px;
-  }
-  nav li:last-child {
-    margin-right: 24px;
-  }
+/* Banner Section */
+
+.desktop {
 }
 
-main {
-
+.navigation {
+  align-items: center;
 }
 
 .practice {
-  display: none;
-}
-
-.banner {
-  width: 100%;
-  height: 180px;
-  background: url('../images/banner.jpg');
-  background-size: cover;
-}
-
-.banner img {
-  display: none;
 }
 
 .start-here {
   padding: 32px 16px;
 }
 
-@media only screen and (min-width: 800px) {
+.start-here:hover {
+  font-weight: bold;
+  transition: all 500ms;
+}
+
+.start-here button:hover {
+  color: blue;
+  background-color: yellow;
+  transition: all 500ms;
+}
+
+.mobile {
+ }
+ .desktop {
+   display: flex;
+   margin-left: 24px;
+   padding-left: 0;
+   width: 100%;
+ }
+ .logo {
+   text-transform: uppercase;
+   display: flex;
+   align-items: center;
+   flex: 1;
+ }
+ .logo a {
+   display: flex;
+   align-items: center;
+ }
+
+.logo img {
+  height: 36px;
+}
+
+ .logo span {
+   font-weight: 700;
+ }
+ nav li:nth-child(n+1) {
+   margin-right: 16px;
+ }
+ nav li:last-child {
+   margin-right: 24px;
+ }
+
+
+
   .learn {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: grey;
+    background: lightgrey;
   }
+
   .banner {
     background: none;
     height: auto;
     width: 60%;
     padding: 32px 24px;
   }
+
   .banner img {
     display: flex;
   }
@@ -140,133 +154,109 @@ main {
     max-width: 423px;
   }
   .start-here h1 {
-    font-size: 4vw;
+    font-size: 2.5rem;
   }
-}
 
 
 .information {
-  padding: 16px 16px 32px;
-}
+   display: flex;
+   flex-direction: row;
+   padding: 0;
+ }
+ .practice {
+   display: flex;
+   flex-direction: column;
+   width: 60%;
+   margin: 32px 24px;
+ }
+ .practice img {
+   min-height: 350px;
+ }
+ .practice h2 {
+   margin-top: 32px;
+   margin-bottom: 24px;
+ }
 
-.information-text {
-  padding: 8px 16px;
-}
+ .info-thumb {
+   height: auto;
+   max-width: 100%;
+   overflow: hidden;
+ }
+ .orientation, .campus, .guest-lectures {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   border-bottom: 1px solid grey;
+   padding: 16px;
+   max-width: 423px;
+ }
+ .orientation img, .campus img, .guest-lectures img {
+   width: 35%;
+ }
+ .information-boxes div:first-child {
+   margin-top: 16px;
+ }
+ .information div:nth-child(n+2) {
+   border-top: none;
+ }
+ .information-boxes {
+   border-left: 1px solid grey;
+   padding-bottom: 32px;
+ }
+ blockquote footer {
+   margin-top: 32px;
+ }
 
-.information-text h3, .information-text p {
-  margin-bottom: 8px;
-}
 
-.info-thumb {
-  height: 150px;
-  overflow: hidden;
-}
+ .information {
+   padding: 16px 16px 32px;
+ }
 
 
-@media only screen and (min-width: 800px) {
-  .information {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-  }
-  .practice {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 32px 24px;
-  }
-  .practice img {
-    min-height: 350px;
-  }
-  .practice h2 {
-    margin-top: 32px;
-    margin-bottom: 24px;
-  }
-  .info-thumb {
-    height: auto;
-  }
-  .orientation, .campus, .guest-lectures {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: 1px solid grey;
-    padding: 16px;
-    max-width: 423px;
-  }
-  .orientation img, .campus img, .guest-lectures img {
-    width: 35%;
-  }
-  .information-features div:first-child {
-    margin-top: 16px;
-  }
-  .information div:nth-child(n+2) {
-    border-top: none;
-  }
-  .information-features {
-    border-left: 1px solid grey;
-    padding-bottom: 32px;
-  }
-  blockquote > footer {
-    margin-top: 32px;
-  }
-}
+ .information-text {
+   padding: 8px 16px;
+ }
+
+ .information-text h3, .information-text p {
+   margin-bottom: 8px;
+ }
+
+
+
+ .course-info h3 {
+   padding: 16px;
+   background: grey;
+   margin-bottom: 8px;
+ }
 
 .featured-courses {
-  padding: 32px 16px;
+  background: lightgrey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-.featured-courses h2, .exhibition-featured h2 {
-  text-align: center;
-  width: 100%;
-  padding-bottom: 16px;
-}
-
 .featured-courses img, .featured-courses .course-info p {
-  display: none;
+  display: flex;
 }
-
-.course-info > h3 {
-  padding: 16px;
-  background: grey;
-  margin-bottom: 8px;
+.featured-courses img {
+  height: 154px;
 }
-
-
-@media only screen and (min-width: 550px) {
-  .featured-courses {
-    background: lightgrey;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .featured-courses img, .featured-courses .course-info p {
-    display: flex;
-  }
-  .featured-courses img {
-    height: 154px;
-  }
-  .course-info h3, .course-info {
-    background: white;
-  }
-  .course-info p {
-    padding: 0 16px 8px;
-  }
-  .course-info p:last-child {
-    padding: 0 16px 24px;
-  }
-  .course-card {
-    width: 350px;
-    margin-right: 32px;
-    margin-bottom: 24px;
-  }
-  .course-info {
-    min-height: 154px;
-  }
+.course-info h3, .course-info {
+  background: white;
 }
-
-
-.recent-exhibits, .exhibit-vid h3, .exhibit-vid p {
-  display: none;
+.course-info p {
+  padding: 0 16px 8px;
+}
+.course-info p:last-child {
+  padding: 0 16px 24px;
+}
+.course-card {
+  width: 350px;
+  margin-right: 32px;
+  margin-bottom: 24px;
+}
+.course-info {
+  min-height: 154px;
 }
 
 .exhibition-featured h2 {
@@ -274,7 +264,8 @@ main {
 }
 
 
-@media only screen and (min-width: 750px) {
+
+
 
   .recent-exhibits {
     display: block;
@@ -313,10 +304,40 @@ main {
     flex-direction: column;
     padding-top: 24px;
   }
+
+
+footer {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer nav {
+  display: flex;
+}
+footer nav ul {
+  display: flex;
+  flex-direction: row;
+}
+footer nav ul li:first-child {
+  margin-right: 16px;
 }
 
-footer > nav {
-  display: none;
+.featured-courses {
+  padding: 32px 16px;
+}
+
+.featured-courses h2, .exhibition-featured h2 {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+.featured-courses img, .featured-courses .course-info p {
+}
+
+footer nav {
+
 }
 
 footer {
@@ -327,21 +348,21 @@ footer {
   margin-left: 24px;
 }
 
-@media only screen and (min-width: 400px) {
-  footer {
-    padding: 16px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  footer > nav {
-    display: flex;
-  }
-  footer > nav ul {
-    display: flex;
-    flex-direction: row;
-  }
-  footer > nav ul li:first-child {
-    margin-right: 16px;
+
+.recent-exhibits, .exhibit-vid h3, .exhibit-vid p {
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 400px) {
+
+.mobile {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+  padding: 0;
   }
 }
