@@ -23,11 +23,6 @@ a {
   text-decoration: none;
 }
 
-nav {
-  display: flex;
-  height: 64px;
-}
-
 h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -51,9 +46,14 @@ h4 {
 button {
   font-size: 1.2em;
   background: orange;
-  width: 50%;
+  width: 80%;
   padding: 8px 0;
   color: blue;
+}
+
+nav {
+  display: flex;
+  height: 64px;
 }
 
 nav li {
@@ -67,15 +67,22 @@ nav li:last-child {
   margin-right: 16px;
 }
 
-footer > nav {
-  display: none;
-}
-
 footer {
   padding: 32px 0;
 }
 
-/* Mobile Screen Section */
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+.navigation {
+  align-items: center;
+}
+
+/* BEGIN - Mobile Screen Section */
+
+/* Mobile - Header Section */
 
 .desktop {
   display: none;
@@ -88,18 +95,7 @@ footer {
   padding: 0;
 }
 
-.navigation {
-  align-items: center;
-}
-
-img, video {
-  width: 100%;
-  height: auto;
-}
-
-.info-detail {
-  display: none;
-}
+/* Mobile - Banner Section */
 
 .banner {
   width: 100%;
@@ -116,6 +112,12 @@ img, video {
   padding: 32px 16px;
 }
 
+/* Mobile - Information Section */
+
+.info-detail {
+  display: none;
+}
+
 .information {
   padding: 16px 16px 32px;
 }
@@ -127,6 +129,8 @@ img, video {
 .information-text h3, .information-text p {
   margin-bottom: 8px;
 }
+
+/* Mobile - Courses Section */
 
 .courses {
   padding: 32px 16px;
@@ -144,9 +148,11 @@ img, video {
 
 .course-info > h3 {
   padding: 16px;
-  background: grey;
+  background: rgb(180, 180, 180);
   margin-bottom: 8px;
 }
+
+/* Mobile - These Exhibits Section */
 
 .recent-exhibs, .exhib-vid h3, .exhib-vid p {
   display: none;
@@ -156,11 +162,26 @@ img, video {
   padding: 32px 0;
 }
 
-/* Desktop Screen Section */
+/* Mobile - Footer Section */
+
+.page-bottom li, .page-bottom a {
+  display: none;
+}
+
+.page-bottom {
+  font-size: 0.8rem;
+  margin-left: 24px;
+}
+
+/* BEGIN - Desktop Screen Section */
 
 @media only screen and (min-width: 640px) {
 
-/* Header and Logo Section */
+/* Desktop - Header and Logo Section */
+
+nav a {
+  color: black;
+}
 
 .desktop {
   display: flex;
@@ -193,7 +214,7 @@ img, video {
   display: none;
   }
 
-/* Jumbotron - Banner Section */
+/* Desktop - Jumbotron - Banner Section */
 
 .banner {
   background: none;
@@ -216,13 +237,9 @@ img, video {
   }
 
 .start-here {
-  padding: 32px 0px;
+  padding: 32px 0;
   display: inline-block;
   width:30%;
-  }
-
-.start-here:hover {
-  font-weight: 700;
   }
 
 .start-here button:hover {
@@ -235,7 +252,7 @@ img, video {
   font-size: 2.5rem;
   }
 
-/* Information Section */
+/* Desktop - Information Section */
 
 .information {
   display: flex;
@@ -266,7 +283,7 @@ img, video {
   overflow: hidden;
   }
 
-.orientation, .campus, .guest-lectures {
+.info-image {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -274,7 +291,7 @@ img, video {
   max-width: 423px;
   }
 
-.orientation img, .campus img, .guest-lectures img {
+.info-image img {
   width: 35%;
   height:auto;
   overflow: hidden;
@@ -298,7 +315,7 @@ img, video {
   padding-bottom: 32px;
   }
 
-/* Start Learning - Courses Section */
+/* Desktop - Start Learning - Courses Section */
 
 .courses img, .courses .course-info p {
   display: flex;
@@ -334,7 +351,7 @@ img, video {
   height: 160px;
   }
 
-/* Thesis Exhibit Section */
+/* Desktop - Thesis Exhibit Section */
 
 .recent-exhibs {
   display: block;
@@ -348,7 +365,7 @@ img, video {
   border-bottom: rgb(240, 240, 240);
   }
 
-.exhib-info {
+.exhib-box {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -357,7 +374,7 @@ img, video {
   height: 168px;
   }
 
-.exhib-info img {
+.exhib-box img {
   width: 35%;
   margin-right: 16px;
   }
@@ -367,7 +384,7 @@ img, video {
   flex-direction: column;
   }
 
-.exhib-info:first-child {
+.exhib-box:first-child {
   background: rgb(180, 180, 180);
   }
 
@@ -382,21 +399,19 @@ img, video {
   padding-top: 24px;
   }
 
-/* Footer Section */
+/* Desktop - Footer Section */
 
 .page-bottom {
-  font-size: 0.9rem;
   display: flex;
   border-top: 1px solid rgb(240, 240, 240);
-  width: 100%;
+  font-size: 0.9rem;
   justify-content: space-between;
-  padding: 16px 24px;
+  margin-right: 24px;
   }
 
 .page-bottom li, .page-bottom a {
   list-style: none;
   display: inline-block;
   color: black;
-  margin-right: 24px;
   }
 }
